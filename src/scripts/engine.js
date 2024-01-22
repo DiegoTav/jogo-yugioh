@@ -18,7 +18,7 @@ const state = {
     }
 };
 
-//ok V
+
 const playerSides = {
     player1: "player-cards",
     computer: "computer-cards",
@@ -52,13 +52,12 @@ const cardData = [
     },
 ];
 
-//OK V
 async function getRandomCardId() {
     const randomIndex = Math.floor(Math.random() * cardData.length);
     return cardData[randomIndex].id;
 }
 
-//  OK V
+
 async function createCardImage(idCard, fieldSide) {
     const cardImage = document.createElement("img");
     cardImage.setAttribute("height", "100px");
@@ -69,28 +68,23 @@ async function createCardImage(idCard, fieldSide) {
 
     if (fieldSide === playerSides.player1) {
 
-        cardImage.addEventListener("click", () => {
-            setCardsField(cardImage.getAttribute("data-id"));
-        });
-    
-        }
-
-
         cardImage.addEventListener("mouseover", () => {
             drawSelectCard(idCard);
         });
 
-    
+        cardImage.addEventListener("click", () => {
+            setCardsField(cardImage.getAttribute("data-id"));
+        });
 
+    }
     return cardImage;
-
 }
-// OK /\
 
-async function drawSelectCard(index){
+
+async function drawSelectCard(index) {
     state.cardSprites.avatar.src = cardData[index].img;
     state.cardSprites.name.innerText = cardData[index].name;
-    state.cardSprites.type.innerText = "Atribute: "+cardData[index].name
+    state.cardSprites.type.innerText = "Atribute: " + cardData[index].name
 }
 
 
