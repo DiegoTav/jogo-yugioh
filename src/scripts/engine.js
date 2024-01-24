@@ -22,6 +22,7 @@ const state = {
     actions: {
         button: document.getElementById("next-duel"),
     }
+
 };
 
 const playerSides = {
@@ -124,7 +125,6 @@ async function hiddenCardDetails() {
     state.cardSprites.type.innerText = "";
 }
 
-
 async function drawButton(text) {
     state.actions.button.innerText = text.toUpperCase();
     state.actions.button.style.display = "block";
@@ -148,11 +148,10 @@ async function checkDuelResults(playerCardId, ComputerCardId) {
         state.score.computerScore++;
     }
     
-    await playerAudio(duelResults);
+    await playerAudio (duelResults);
     
     return duelResults;
 }
-
 
 
 async function removeAllCardsImages() {
@@ -191,6 +190,7 @@ async function resetDuel() {
     init();
 }
 
+
 async function playerAudio(status) {
     const audio = new Audio(`./src/assets/audios/${status}.wav`);
 
@@ -208,7 +208,9 @@ function init() {
  
     
     const bgm = document.getElementById("bgm");
-    bgm.play();
+    bgm.volume = 0.3;
+    bgm.play(); 
+   
 }
 
 init();
