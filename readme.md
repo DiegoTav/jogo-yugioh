@@ -1,8 +1,13 @@
 # Yu-Gi-Oh | Jo-ken-po Edition
 
-Jogo de jokenpo que criei para explicar conceitos de lógica de programação aplicados a jogos
+Jogo de jokenpo que criei para paraticar conceitos de lógica de programação aplicados a jogos
 
-conceitos abordados:
+Linguagens abordadas:
+- HTML5
+- CCS3
+- Java Script
+
+Conceitos abordados:
 
 - Armazenamento e gerenciamento de estado manual
 - Funções limpas
